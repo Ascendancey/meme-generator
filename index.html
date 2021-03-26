@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meme Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAArNPyAJCUlgAfHx8An7XHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgBBAAAAAABBIAIQAAAAABBBABIAAAAAAAEkEUQAAAACQREREUAAAEERERERFAACEREREUEUAAQREUERQiQAAzM0BBEkJAAEERFARCIkAAQhEkAAJAAAA0E0QAAkAAAEIRJABCIAAABBESAAIAAAAARCAAAAAAAAAAAAAAAAD2fwAA4z8AAOmfAAD8BwAA8AMAAOABAADAAQAAwAEAAMEBAADAgQAAwOcAAMDnAADAxwAA4O8AAPH/AAD//wAA" rel="icon" type="image/x-icon" />
+    <meta name="author" content="The OMM Team">
+    <script type="text/javascript" src="Backend/public/javascripts/script.js"></script>
+    <link rel="stylesheet" href="Backend/public/stylesheets/style.css">
+</head>
+<body>
+<div id="container">
+    <h1>Meme Generator</h1>
+        <div id="output"></div>
+        <div id="output2"></div>
+    <div id="slideShowImages"></div>
+    <button id="backButton">❮</button>
+    <button id="nextButton">❯</button>
+    <div id="formWrapper">
+        <form>
+            <label for="topCaption">Top Caption:</label>
+            <input type="text" placeholder="Top Caption" name="Top Caption" id="topCaption" >
+            <label for="bottomCaption">Bottom Caption:</label>
+            <input type="text" placeholder="Bottom Caption" name="Bottom Caption" id="bottomCaption">
+            <button type="submit">Caption</button>
+        </form>
+    </div>
+    <button id="save">Save</button>
+</div>
+</body>
+</html>

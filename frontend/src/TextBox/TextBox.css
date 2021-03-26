@@ -1,0 +1,20 @@
+.Dialog {
+    border-radius: 10px;
+    /* border: 1px dashed grey; */
+    position: absolute;
+    cursor: move;
+    overflow: auto;
+    resize: both;
+    word-break: break-word;
+}
+
+#output1{
+    z-index: 100;
+    left: 0;
+    right: 0;
+    top: 0;
+    color: white;
+    font-family: Impact, sans-serif;
+    font-size: 64px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
