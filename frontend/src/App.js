@@ -27,8 +27,8 @@ class App extends Component {
         currentTemplateID: 0,
         currentmeme: {
             url: "https://imgix.bustle.com/uploads/image/2018/5/14/aca8de5f-2ad2-4c99-ad2d-a97076c2eb8d-pigeon-meme-feature.jpg?w=1020&h=574&fit=crop&crop=faces&auto=format%2Ccompress",
-            topcaption: "Look at me",
-            bottomcaption: "I am the captain now",
+            topcaption: "<p>Look at me</p>",
+            bottomcaption: "<p>I am the captain now</p>",
             name: "This is the name of the meme",
             status: "1",
             title: "I'm the captain now!",
@@ -453,6 +453,7 @@ class App extends Component {
                         <label>Meme title: </label> <br/>
                         <input type="text" onChange={this.titleChangedHandler} value={this.state.currentmeme.title}/>
                         {/* WYSISYG tex editor for TOP caption*/}
+                        {this.state.isLoaded &&
                         <div className="editor-wrapper">
                             <label>Top caption: </label> <br/>
                             <CKEditor
@@ -468,8 +469,9 @@ class App extends Component {
                                     })
                                 }}
                             />
-                        </div>
+                        </div>}
                         {/* WYSISYG text editor for Bottom caption*/}
+                        {this.state.isLoaded &&
                         <div className="editor-wrapper">
                             <label>Bottom caption: </label> <br/>
                             <CKEditor
@@ -485,7 +487,7 @@ class App extends Component {
                                     })
                                 }}
                             />
-                        </div>
+                        </div> }
                         <Controls url={this.state.currentmeme.url} urlchange={this.urlChangedHandler}/>
                         <div id="buttonWrapper">
                             {/* selector for meme and GIF templates */}
