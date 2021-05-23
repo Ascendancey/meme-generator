@@ -226,7 +226,7 @@ class App extends Component {
             })
         };
 
-        fetch("http://localhost:9000/posts", requestOptions)
+        fetch("http://192.168.0.182:9000/posts", requestOptions)
             .then(response => response.json())
         // .then(data => this.setState({ postId: data.id }));
     }
@@ -255,7 +255,7 @@ class App extends Component {
             }
         };
         // console.log(formData)
-        axios.post("http://localhost:9000/templates", formData, config)
+        axios.post("http://192.168.0.182:9000/templates", formData, config)
             .then((response) => {
                 alert("The file is successfully uploaded");
             })
@@ -288,7 +288,7 @@ class App extends Component {
 
       };
 
-      fetch("http://localhost:9000/comments", requestOptions)
+      fetch("http://192.168.0.182:9000/comments", requestOptions)
           .then(response => response.json())
           .then(this.commentsAPI)
     }
@@ -305,14 +305,14 @@ class App extends Component {
               })
           };
     
-          fetch("http://localhost:9000/votes", requestOptions)
+          fetch("http://192.168.0.182:9000/votes", requestOptions)
               .then(response => response.json())
               .then(this.votesAPI)
       }
 
     // fetch data from backend
     callAPI() {
-        fetch("http://localhost:9000/posts")
+        fetch("http://192.168.0.182:9000/posts")
             .then(res => res.json())
             .then(res => {
                 this.setState({apiResponse: res, isLoaded: true}, () => {
@@ -342,7 +342,7 @@ class App extends Component {
 
     // fetch saved templates
     getTemplatesAPI() {
-        fetch("http://localhost:9000/templates")
+        fetch("http://192.168.0.182:9000/templates")
             .then(res => res.json())
             .then(res => {
                 this.setState({templateResponse: res, templatesIsLoaded: true});
@@ -351,7 +351,7 @@ class App extends Component {
 
     // fetch comments
     commentsAPI = () => {
-      fetch("http://localhost:9000/comments")
+      fetch("http://192.168.0.182:9000/comments")
           .then(res => res.json())
           .then(res => {
               this.setState({comments: res});
@@ -360,7 +360,7 @@ class App extends Component {
 
     // fetch votes
     votesAPI = () => {
-      fetch("http://localhost:9000/votes")
+      fetch("http://192.168.0.182:9000/votes")
           .then(res => res.json())
           .then(res => {
               this.setState({votes: res});
@@ -415,9 +415,6 @@ class App extends Component {
     render() {
         return (
             <div id="container">
-                {/* login & logout components */}
-                <Login userData={this.userHandler}/>
-                <Logout/>
                 <h1>Meme Overview</h1>
                 <ImageOverview images={this.state.apiResponse}></ImageOverview>
                 <h1>Meme Generator</h1>
@@ -537,11 +534,16 @@ class App extends Component {
                         </div>
                     </div>
                 </div>
+                <h1>User specific</h1>
+                {/* login & logout components */}
+                <Login userData={this.userHandler}/>
+                <Logout/>
                 {this.state.user &&
                 <div className="splitscreen">
                     <div className="left">
-                    <h1>User specific</h1>
+                    
                     <h3>Memes created by you</h3>
+                    
                     {this.state.user &&
                     <ol>
                         {this.state.apiResponse.filter(meme => meme.user === this.state.user.email).map(filteredMemes => (
